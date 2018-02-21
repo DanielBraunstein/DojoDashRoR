@@ -1,0 +1,22 @@
+<h1>Dojo Details</h1>
+<p><%= @dojo.name %></p>
+<p><%= @dojo.street %></p>
+<p><%= @dojo.city %></p>
+<p><%= @dojo.state %></p>
+<p>
+
+<% if @students != 0 %>
+    <% @students.each do |student| %>
+        <tr>
+            <td><%= student.first_name %></td>
+            <td><%= student.last_name %></td>
+            <td><%= student.email %></td>
+            <td><a href='/dojos/<%= @dojo.id %>/students/show/<%= student.id %>'>show</a></td>
+            <br>
+        </tr>
+    <% end %>
+<% end %>
+</p>
+<a href = '/edit/<%= @dojo.id %>'>edit</a>
+<a href = '/dojos/students/new'>new student</a>
+<a href='/'>Return Home</a>

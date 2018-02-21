@@ -1,0 +1,19 @@
+<h1>Student Details</h1>
+<p><%= @student.first_name %></p>
+<p><%= @student.last_name %></p>
+<p><%= @student.email %></p>
+<p><%= @dojo.name %><p>
+<h2>Cohort-mates</h2>
+<% if @cohort != 0 %>
+    <% @cohort.each do |cohort| %>
+        <tr>
+            <td><%= "#{cohort['first_name']}" %></td>
+            <td><% varId = "#{cohort['id']}" %>
+            <a href='/dojos/<%= @dojo.id %>/students/show/<%= varId %>'>show</a></td>
+            # <br>
+        </tr>
+    <% end %>
+<% end %>
+<a href='/dojos/<%= @dojo.id %>/students/edit/<%= @student.id %>'>edit</a>
+<a href= '/show/<%= @dojo.id %>'>Go Back to Dojo Page</a>
+<a href='/'>Return Home</a><a href='/'></a>

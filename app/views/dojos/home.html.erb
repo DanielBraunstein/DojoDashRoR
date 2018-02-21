@@ -1,0 +1,13 @@
+<h1>Dojos</h1>
+<table>
+<% @dojos.each do |dojo| %>
+    <tr>
+        <td><%= dojo.name %></td>
+        <td><%= dojo.street %></td>
+        <td><%= dojo.city %></td>
+        <td><%= dojo.state %></td>
+        <td><a href='/show/<%= dojo.id %>'>show</a></td>
+    </tr>
+<% end %>
+</table>
+<p><a href = '/new'>Create New Dojo</a></p>

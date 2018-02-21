@@ -1,0 +1,13 @@
+<h1>Edit Dojo</h1>
+<form action="/update/<%= @dojo.id %>" method="post">
+Dojo Name:<input type="text" name="dojo[name]" value = "<%= @dojo.name %>"><br>
+Dojo Street Address:<input type="text" name="dojo[street]" value = "<%= @dojo.street %>"><br>
+Dojo City:<input type="text" name="dojo[city]" value = "<%= @dojo.city %>"><br>
+Dojo State:<input type="text" name="dojo[state]" value = "<%= @dojo.state %>"><br>
+<input type="hidden" name="authenticity_token" value="<%= session[:_csrf_token] %>">
+<button>Submit</button>
+</form>
+<p>
+    <a href='/'>Return Home</a>
+    <a href='/show/<%= @dojo.id %>'>show</a>
+</p>

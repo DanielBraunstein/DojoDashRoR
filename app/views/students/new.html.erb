@@ -1,0 +1,16 @@
+<h1>New Student </h1>
+<form action="/dojos/students/create" method="post">
+Student First Name:<input type="text" name="student[first_name]"><br>
+Student Last Name:<input type="text" name="student[last_name]"><br>
+Student Email Address:<input type="text" name="student[email]"><br>
+Student :<select size= 1 name="student[dojo]">
+    <% @dojos.each do |dojo| %>
+        <option value = "<%= dojo.id %>"><%= dojo.name %></option>
+    <% end %>
+</select>
+<input type="hidden" name="authenticity_token"  value="<%= session[:_csrf_token] %>">
+<button>Submit</button>
+</form>
+<p>
+    <a href='/'>Return Home</a>
+</p>

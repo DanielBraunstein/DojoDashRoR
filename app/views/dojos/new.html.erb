@@ -1,0 +1,9 @@
+<h1>New Dojo</h1>
+<form action="/create" method="post">
+Dojo Name:<input type="text" name="dojo[name]"><br>
+Dojo Street Address:<input type="text" name="dojo[street]"><br>
+Dojo City:<input type="text" name="dojo[city]"><br>
+Dojo State:<input type="text" name="dojo[state]"><br>
+<input type="hidden" name="authenticity_token" value="<%= session[:_csrf_token] %>">
+<button>Submit</button>
+</form>
